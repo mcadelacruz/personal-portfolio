@@ -1,44 +1,44 @@
-// aamin nako most of the javascript code here is prompted at claude.ai, but only for the page transition saka scrolling animation 
+// got most of this javascript code from claude.ai, especially the page transition and scrolling animation stuff
 
 document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
     const overlay = document.querySelector('.page-transition-overlay');
     
-    // Function to switch sections with transition
+    // function to switch sections with transition
     function switchSection(sectionId) {
-        // Show overlay
+        // show overlay
         overlay.classList.add('active');
         
-        // After overlay is fully visible
+        // after overlay is fully visible
         setTimeout(() => {
-            // Hide all sections
+            // hide all sections
             sections.forEach(section => {
                 section.classList.remove('active');
             });
             
-            // Update nav links
+            // update nav links
             navLinks.forEach(link => {
                 link.classList.remove('active');
             });
             
-            // After a delay, show the new section
+            // after a delay, show the new section
             setTimeout(() => {
-                // Show the target section
+                // show the target section
                 const targetSection = document.getElementById(sectionId);
                 targetSection.classList.add('active');
                 
-                // Update active nav link
+                // update active nav link
                 document.querySelector(`.nav-link[data-section="${sectionId}"]`).classList.add('active');
                 
-                // Hide overlay
+                // hide overlay
                 overlay.classList.remove('active');
             }, 1000);
             
         }, 500);
     }
     
-    // Add event listeners to nav links
+    // add event listeners to nav links
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
@@ -47,32 +47,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Create an Intersection Observer instance
+    // create an intersection observer instance
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-          // If the element is in the viewport
+          // if the element is in the viewport
           if (entry.isIntersecting) {
-            // Add the animation class
+            // add the animation class
             entry.target.classList.add('animate-in');
           } else {
-            // Remove the animation class when out of view
+            // remove the animation class when out of view
             entry.target.classList.remove('animate-in');
           }
         });
       }, {
-        threshold: 0.15, // Trigger when at least 15% of the element is visible
-        rootMargin: '0px 0px -100px 0px' // Slightly adjust the detection area
+        threshold: 0.15, // trigger when at least 15% of the element is visible
+        rootMargin: '0px 0px -100px 0px' // slightly adjust the detection area
       });
     
-      // Select all elements with the 'animate-on-scroll' class
+      // select all elements with the 'animate-on-scroll' class
       const animateElements = document.querySelectorAll('.animate-on-scroll');
       
-      // Observe each element
+      // observe each element
       animateElements.forEach(element => {
         observer.observe(element);
     });
 
-    // Adding hover effect for achievement items
+    // adding hover effect for achievement items
     const achievementItems = document.querySelectorAll('.achievement-item');
     
     achievementItems.forEach(item => {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Adding staggered animation delay to achievement items
+    // adding staggered animation delay to achievement items
     const achievementLists = document.querySelectorAll('.achievement-list');
     
     achievementLists.forEach(list => {
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate references on hover
+    // animate references on hover
     const referenceCards = document.querySelectorAll('.reference-card');
     
     referenceCards.forEach(card => {

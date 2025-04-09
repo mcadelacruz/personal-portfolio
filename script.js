@@ -71,4 +71,43 @@ document.addEventListener('DOMContentLoaded', function() {
       animateElements.forEach(element => {
         observer.observe(element);
     });
+
+    // Adding hover effect for achievement items
+    const achievementItems = document.querySelectorAll('.achievement-item');
+    
+    achievementItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.querySelector('.achievement-icon').style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            this.querySelector('.achievement-icon i').style.opacity = '1';
+        });
+        
+        item.addEventListener('mouseleave', function() {
+            this.querySelector('.achievement-icon').style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+            this.querySelector('.achievement-icon i').style.opacity = '0.8';
+        });
+    });
+    
+    // Adding staggered animation delay to achievement items
+    const achievementLists = document.querySelectorAll('.achievement-list');
+    
+    achievementLists.forEach(list => {
+        const items = list.querySelectorAll('.achievement-item');
+        items.forEach((item, index) => {
+            item.style.transitionDelay = `${index * 100}ms`;
+        });
+    });
+    
+    // Animate references on hover
+    const referenceCards = document.querySelectorAll('.reference-card');
+    
+    referenceCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.transition = 'transform 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
 });

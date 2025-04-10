@@ -1,2 +1,2 @@
-### Portfolio is now deployed using GitHub Pages, woooo check it out!
+### This is my portfolio yeaaaaaaa
 https://mcadelacruz.github.io/personal-portfolio/

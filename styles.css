@@ -621,10 +621,6 @@ nav {
     transform: translateY(-2px);
 }
 
-.project-links i {
-    margin-right: 0.5rem;
-}
-
 /* page transition overlay styles */
 .page-transition-overlay {
     position: fixed;

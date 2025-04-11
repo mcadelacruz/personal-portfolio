@@ -18,6 +18,10 @@
 
 /* base styles */
 body {
+    background-image: url('bg.gif'); /* unused, di pa makahanap ng maganda hahaha*/
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
     font-family: 'Space Grotesk', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -662,6 +666,31 @@ nav {
     animation: iconPulse 3s infinite ease-in-out;
 }
 
+
+/* a line, yea */
+.section-divider {
+  width: 100%;
+  height: 2px; 
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+  margin: 3rem 0;
+  position: relative;
+  overflow: visible; 
+}
+
+.section-divider::after {
+  content: '';
+  position: absolute;
+  width: 12px; 
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.4); 
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.2); 
+}
+
 /* media queries */
 @media (max-width: 992px) {
     .profile-image-wrapper-me {
@@ -698,6 +727,17 @@ nav {
     .timeline-dot-vertical {
         left: -36px;
     }
+}
+
+@media (max-width: 768px), (max-zoom: 0.8) {
+  .section-divider {
+    height: 3px; 
+  }
+  
+  .section-divider::after {
+    width: 14px; 
+    height: 14px;
+  }
 }
 
 @media (max-width: 576px) {

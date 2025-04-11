@@ -247,6 +247,26 @@ nav {
     opacity: 1;
 }
 
+.navbar-toggler i {
+    font-size: 1.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.navbar-toggler:hover i {
+    opacity: 1;
+}
+
+.custom-navbar {
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0), rgba(10, 10, 10, 1));
+    padding: 1.5rem 2rem;
+    z-index: 2001;
+}
+
+.navbar-collapse {
+    background-color: transparent;
+}
+
 /* achievement item styles */
 .achievement-item {
     border-left: 2px solid rgba(255, 255, 255, 0.2);
